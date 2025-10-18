@@ -7,7 +7,7 @@ export const checkPath = (routes)=>{
 
 export const klikPath = (event)=>{
     event.preventDefault();
-    if(event.target.classList.contains("home") || event.target.classList.contains("about") || event.target.classList.contains("contact") || event.target.classList.contains("service")){
+    if(event.target.classList.contains("navigate-link")){
         navigateTo(event.target.href)
     }
 }

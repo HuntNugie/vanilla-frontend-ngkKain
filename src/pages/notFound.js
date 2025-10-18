@@ -10,7 +10,7 @@ export const notFound = ()=>{
         Mungkin alamatnya salah atau halaman telah dipindahkan.
       </p>
       <a href="/" 
-         class="home inline-block bg-sky-600 text-white px-6 py-3 rounded-lg hover:bg-sky-500 transition shadow-md">
+         class="navigate-link inline-block bg-sky-600 text-white px-6 py-3 rounded-lg hover:bg-sky-500 transition shadow-md">
          Kembali ke Beranda
       </a>
     </div>
