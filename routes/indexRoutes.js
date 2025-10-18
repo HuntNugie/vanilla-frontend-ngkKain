@@ -1,5 +1,7 @@
+import { renderHome } from "../src/pages/home.js"
+
 export const routes = [
-    {path:"/"},
+    {path:"/",view:renderHome},
     {path:"/about"},
     {path:"/contact"}
 ]
