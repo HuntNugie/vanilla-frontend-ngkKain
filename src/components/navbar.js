@@ -6,6 +6,7 @@ export default function navbar() {
       <li><a href="/" class="home hover:text-sky-200 transition">Home</a></li>
       <li><a href="/about" class="about hover:text-sky-200 transition">About Us</a></li>
       <li><a href="/services" class="service hover:text-sky-200 transition">Services</a></li>
+      <li><a href="/products" class="service hover:text-sky-200 transition">Products</a></li>
       <li><a href="/contact" class="contact hover:text-sky-200 transition">Contact</a></li>
     </ul>
   </nav>
