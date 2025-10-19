@@ -7,7 +7,7 @@ export const getData = async (url = "/") => {
     const res = await axios.get(`${api}${url}`, { withCredentials: true });
     return res;
   } catch (error) {
-    console.log(error)
+    throw new Error(error)
   }
 };
 

@@ -33,18 +33,5 @@ export const renderDashboardAdmin = ()=>{
   </div>
 </section>
 
-<script>
-  // Dropdown profil
-  const profileBtn = document.getElementById("profileBtn");
-  const dropdownMenu = document.getElementById("dropdownMenu");
-  if (profileBtn) {
-    profileBtn.addEventListener("click", () => {
-      dropdownMenu.classList.toggle("hidden");
-    });
-    window.addEventListener("click", (e) => {
-      if (!profileBtn.contains(e.target)) dropdownMenu.classList.add("hidden");
-    });
-  }
-</script>
 `
 }

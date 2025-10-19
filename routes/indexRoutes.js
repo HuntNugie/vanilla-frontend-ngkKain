@@ -1,3 +1,4 @@
+import { auth } from "../middleware/authMiddleware.js"
 import { renderAbout } from "../src/pages/about.js"
 import { renderDashboardAdmin } from "../src/pages/admin/dashboard.js"
 import { renderLogin } from "../src/pages/auth/login.js"
@@ -13,5 +14,5 @@ export const routes = [
     {path:"/products",view:renderProduct},
     {path:"/contact",view:renderContact},
     {path:"/login",view:renderLogin},
-    {path:"/dashboard",view:renderDashboardAdmin},
+    {path:"/dashboard",view:renderDashboardAdmin,middleware:auth},
 ]

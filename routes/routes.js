@@ -8,6 +8,12 @@ export async function mainRoute(){
         render()
         return
     }
+    // cek jika mempunyai middleware maka langsung jalani middleware nya
+    if(result?.middleware){
+        const cek = await result.middleware();
+        if(!cek)return
+    }
     render(result.view);
+    
 }
 
