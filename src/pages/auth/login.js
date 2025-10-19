@@ -25,7 +25,7 @@ export const renderLogin = () => {
 
     <p class="text-center text-gray-600 text-sm mt-6">
       Belum punya akun? 
-      <a href="register.html" class="text-sky-600 font-semibold hover:underline">Daftar di sini</a>
+      <a href="/register" class="navigate-link text-sky-600 font-semibold hover:underline">Daftar di sini</a>
     </p>
   </div>
 </section>
