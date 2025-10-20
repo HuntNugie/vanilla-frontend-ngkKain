@@ -1,6 +1,6 @@
 import { mainRoute } from "../routes/routes"
 
-export const navigateTo = (path)=>{
-    history.pushState({},null,path)
+export const navigateTo = (path,data={})=>{
+    history.pushState(data,null,path)
     mainRoute();
 }

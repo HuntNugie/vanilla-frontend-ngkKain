@@ -4,7 +4,7 @@ export const renderLogin = () => {
   <div class="bg-white rounded-2xl shadow-[0_12px_45px_rgba(0,0,0,0.25)] p-10 w-full max-w-md transition duration-300 hover:shadow-[0_16px_55px_rgba(0,0,0,0.35)]">
     <h2 class="text-3xl font-bold text-center text-sky-600 mb-8">Admin Login</h2>
     
-    <form action="#" method="POST" class="space-y-6">
+    <form action="" method="POST" class="form-login space-y-6">
       <div>
         <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
         <input type="email" id="email" name="email" placeholder="Masukkan email admin"
@@ -18,7 +18,7 @@ export const renderLogin = () => {
       </div>
 
       <button type="submit"
-              class="w-full bg-sky-600 text-white py-3 rounded-full font-semibold hover:bg-sky-700 transition">
+              class="submit-login w-full bg-sky-600 text-white py-3 rounded-full font-semibold hover:bg-sky-700 transition">
         Masuk
       </button>
     </form>

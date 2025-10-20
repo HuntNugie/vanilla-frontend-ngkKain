@@ -27,5 +27,17 @@ export const klikPath = async(event)=>{
             document.querySelector(".form-register").reset();
             console.log(error)
         }
+    }else if(event.target.classList.contains("submit-login")){
+        console.log("berhasil login")
+        try {
+            const data = sendForm(".form-login")
+            const url = import.meta.env.VITE_API_LOGIN
+            // kirimkan
+            const kirim = await postData(url,data)
+            navigateTo("/dashboard",kirim.data)
+        } catch (error) {
+            document.querySelector(".form-login").reset();
+            console.log(error)
+        }
     }
 }
