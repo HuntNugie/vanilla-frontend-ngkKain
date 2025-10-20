@@ -4,10 +4,10 @@ export const renderRegister = ()=>{
   <div class="bg-white rounded-2xl shadow-md p-10 w-full max-w-md">
     <h2 class="text-3xl font-bold text-center text-sky-600 mb-8">Register Admin</h2>
     
-    <form action="#" method="POST" class="space-y-6">
+    <form action="" method="POST" class="form-register space-y-6">
       <div>
         <label for="name" class="block text-gray-700 font-semibold mb-2">Nama Lengkap</label>
-        <input type="text" id="name" name="name" placeholder="Nama lengkap admin"
+        <input type="text" id="name" name="nama" placeholder="Nama lengkap admin"
                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-sky-600">
       </div>
 
@@ -29,8 +29,8 @@ export const renderRegister = ()=>{
                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-sky-600">
       </div>
 
-      <button type="submit"
-              class="w-full bg-sky-600 text-white py-3 rounded-full font-semibold hover:bg-sky-700 transition">
+      <button type="submit" 
+              class="submit-register w-full bg-sky-600 text-white py-3 rounded-full font-semibold hover:bg-sky-700 transition">
         Daftar
       </button>
     </form>
