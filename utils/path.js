@@ -1,6 +1,6 @@
 import sendForm from "./form.js";
 import { navigateTo } from "./navigate.js";
-import { postData } from "./api.js";
+import { getData, postData } from "./api.js";
 export const checkPath = (routes)=>{
     const currentPath = window.location.pathname;
     const result = routes.find(r=>r.path === currentPath);
@@ -34,7 +34,7 @@ export const klikPath = async(event)=>{
             const url = import.meta.env.VITE_API_LOGIN
             // kirimkan
             const kirim = await postData(url,data)
-            navigateTo("/dashboard",kirim.data)
+            navigateTo("/dashboard")
         } catch (error) {
             document.querySelector(".form-login").reset();
             console.log(error)

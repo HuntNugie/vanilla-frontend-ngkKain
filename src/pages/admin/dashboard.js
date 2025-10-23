@@ -1,7 +1,9 @@
 import { sidebarAdmin } from "../../components/admin/sidebar.js";
 import { navbarAdmin } from "../../components/admin/navbar.js";
+import { getStore } from "../store/admin.store.js";
 
 export const renderDashboardAdmin = ()=>{
+  const nama = getStore().nama
     return `
    <section class="bg-[#fdfcfb] min-h-screen flex flex-col">
   ${navbarAdmin()}
@@ -12,7 +14,7 @@ export const renderDashboardAdmin = ()=>{
 
     <!-- DASHBOARD CONTENT -->
     <main class="flex-1 p-10">
-      <h2 class="text-3xl font-bold text-sky-600 mb-4">Selamat Datang, Admin</h2>
+      <h2 class="text-3xl font-bold text-sky-600 mb-4">Selamat Datang, ${nama}</h2>
       <p class="text-gray-700 mb-10">Kelola data produk, pesanan, dan laporan dengan mudah dari satu tempat.</p>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">

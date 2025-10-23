@@ -1,13 +1,11 @@
 import { getData } from "../utils/api.js";
-import { navigateTo } from "../utils/navigate.js";
 
 
 export const auth = async function(){
     try {
        const result =  await getData(`/api/admin${this.path}`)
-       return result
+       return result.data
     } catch (error) {
-        navigateTo("/login")
-        return false
+        throw new Error("/login")
     }
 }
