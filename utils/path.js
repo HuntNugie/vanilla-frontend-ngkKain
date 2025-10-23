@@ -38,10 +38,30 @@ export const klikPath = async(event)=>{
             const url = import.meta.env.VITE_API_LOGIN
             // kirimkan
             const kirim = await postData(url,data)
+            Swal.fire({
+                title: kirim.data.message,
+                icon: "success",
+                draggable: true
+            });
             navigateTo("/dashboard")
         } catch (error) {
             document.querySelector(".form-login").reset();
-            console.log(error)
+            if(typeof error.message === "string"){
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: error.message,
+                });
+            }else{
+                const err = error.message.map((e)=>{
+                   return `<li>${e.msg}</li>`
+                }).join("")
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    html: `<ul>${err}</ul>`,
+                });
+            }
         }
     // untuk logout
     }else if(event.target.classList.contains("logout")){
