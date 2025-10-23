@@ -16,6 +16,6 @@ export const routes = [
     {path:"/products",view:renderProduct},
     {path:"/contact",view:renderContact},
     {path:"/login",view:renderLogin,middleware:guest},
-    {path:"/register",view:renderRegister},
+    {path:"/register",view:renderRegister,middleware:guest},
     {path:"/dashboard",view:renderDashboardAdmin,middleware:auth},
 ]
