@@ -1,4 +1,5 @@
 import { auth } from "../middleware/authMiddleware.js"
+import { guest } from "../middleware/gusetMiddleware.js"
 import { renderAbout } from "../src/pages/about.js"
 import { renderDashboardAdmin } from "../src/pages/admin/dashboard.js"
 import { renderLogin } from "../src/pages/auth/login.js"
@@ -14,7 +15,7 @@ export const routes = [
     {path:"/services",view:renderService},
     {path:"/products",view:renderProduct},
     {path:"/contact",view:renderContact},
-    {path:"/login",view:renderLogin},
+    {path:"/login",view:renderLogin,middleware:guest},
     {path:"/register",view:renderRegister},
     {path:"/dashboard",view:renderDashboardAdmin,middleware:auth},
 ]
