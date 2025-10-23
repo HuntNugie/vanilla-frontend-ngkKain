@@ -11,7 +11,7 @@ export const getData = async (url = "/") => {
   }
 };
 
-export const postData = async (url = "/", data) => {
+export const postData = async (url = "/", data={}) => {
   try {
     const res = await axios.post(`${api}${url}`, data, {
       withCredentials: true,

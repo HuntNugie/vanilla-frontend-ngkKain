@@ -16,7 +16,7 @@ export const navbarAdmin = () => {
         <div id="dropdownMenu" class="hidden absolute right-0 mt-3 w-48 bg-white rounded-lg shadow-[0_10px_30px_rgba(0,0,0,0.15)]">
           <a href="#/profile" class="block px-4 py-3 text-gray-700 hover:bg-sky-50">Profile</a>
           <hr class="border-gray-200">
-          <a href="#/logout" class="block px-4 py-3 text-red-600 font-semibold hover:bg-red-50">Logout</a>
+          <a href="/logout" class="logout block px-4 py-3 text-red-600 font-semibold hover:bg-red-50">Logout</a>
         </div>
       </div>
     </nav>`;

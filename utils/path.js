@@ -9,13 +9,16 @@ export const checkPath = (routes)=>{
 
 export const klikPath = async(event)=>{
     event.preventDefault();
+    // untuk berpindah halaman
     if(event.target.classList.contains("navigate-link")){
         navigateTo(event.target.href)
+    //untuk dropdown profile  
     }else if(event.target.id === "profileBtn"){
         document.getElementById("dropdownMenu").classList.toggle("hidden")
         if(!document.getElementById("profileBtn").contains(event.target)){
             document.getElementById("dropdownMenu").classList.toggle("hidden")
         }
+    // untuk registrasi
     }else if(event.target.classList.contains("submit-register")){
         try {
         const data = sendForm(".form-register")
@@ -27,6 +30,7 @@ export const klikPath = async(event)=>{
             document.querySelector(".form-register").reset();
             console.log(error)
         }
+    // untuk login
     }else if(event.target.classList.contains("submit-login")){
         console.log("berhasil login")
         try {
@@ -37,6 +41,14 @@ export const klikPath = async(event)=>{
             navigateTo("/dashboard")
         } catch (error) {
             document.querySelector(".form-login").reset();
+            console.log(error)
+        }
+    // untuk logout
+    }else if(event.target.classList.contains("logout")){
+        try {
+            const logout = await postData("/api/auth/logout");
+            navigateTo("/login")
+        } catch (error) {
             console.log(error)
         }
     }
