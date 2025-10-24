@@ -86,9 +86,16 @@ export const klikPath = async(event)=>{
     // untuk logout
     }else if(event.target.classList.contains("logout")){
         try {
-            const logout = await postData("/api/auth/logout");
+            const logout = await postData(import.meta.env.VITE_API_LOGOUT);
             navigateTo("/login")
         } catch (error) {
+            console.log(error)
+        }
+    }else if(event.target.classList.contains("add-produk")){
+        try{
+            const data = sendForm(".form-addProduk")
+            const add = await postData(import.meta.env.VITE_API_ADD_PRODUK,data)
+        }catch(error){
             console.log(error)
         }
     }
