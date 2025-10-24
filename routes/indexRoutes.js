@@ -2,6 +2,7 @@ import { auth } from "../middleware/authMiddleware.js"
 import { guest } from "../middleware/gusetMiddleware.js"
 import { renderAbout } from "../src/pages/about.js"
 import { renderDashboardAdmin } from "../src/pages/admin/dashboard.js"
+import { renderProdukAdmin } from "../src/pages/admin/produk.js"
 import { renderLogin } from "../src/pages/auth/login.js"
 import { renderRegister } from "../src/pages/auth/register.js"
 import { renderContact } from "../src/pages/contacts.js"
@@ -18,4 +19,5 @@ export const routes = [
     {path:"/login",view:renderLogin,middleware:guest},
     {path:"/register",view:renderRegister,middleware:guest},
     {path:"/dashboard",view:renderDashboardAdmin,middleware:auth},
+    {path:"/produk",view:renderProdukAdmin,middleware:auth},
 ]
