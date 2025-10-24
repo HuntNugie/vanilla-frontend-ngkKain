@@ -95,8 +95,30 @@ export const klikPath = async(event)=>{
         try{
             const data = sendForm(".form-addProduk")
             const add = await postData(import.meta.env.VITE_API_ADD_PRODUK,data)
+            Swal.fire({
+                title: "berhasil menambahkan data",
+                icon: "success",
+                draggable: true
+            });
+            document.querySelector(".form-addProduk").reset();
         }catch(error){
-            console.log(error)
+             document.querySelector(".form-addProduk").reset();
+             if(typeof error.message === "string"){
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: error.message,
+                });
+            }else{
+                const err = error.message.map((e)=>{
+                   return `<li>${e.msg}</li>`
+                }).join("")
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    html: `<ul>${err}</ul>`,
+                });
+            }
         }
     }
 }
