@@ -1,7 +1,24 @@
 import { navbarAdmin } from "../../components/admin/navbar";
 import { sidebarAdmin } from "../../components/admin/sidebar";
-
+import { getStore } from "../store/admin.store.js";
 export const renderProdukAdmin = ()=>{
+  const {data} = getStore()
+  const component = data.map((el,index)=>{
+    return `
+     <tr class="hover:bg-gray-50 transition">
+                  <td class="py-3 px-4">${index+=1}</td>
+                  <td class="py-3 px-4">${el.nama_produk}</td>
+                  <td class="py-3 px-4">${el.kategori}</td>
+                  <td class="py-3 px-4">Rp ${el.harga}</td>
+                  <td class="py-3 px-4">${el.stok}</td>
+                  <td class="py-3 px-4 text-center space-x-2">
+                    <button class="bg-sky-500 text-white px-3 py-1 rounded-lg hover:bg-sky-600">Edit</button>
+                    <button class="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-sky-600">Detail</button>
+                    <button class="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600">Hapus</button>
+                  </td>
+      </tr>
+    `
+  }).join("")
     return `
       <section class="bg-[#fdfcfb] min-h-screen flex flex-col">
     ${navbarAdmin()}
@@ -34,42 +51,8 @@ export const renderProdukAdmin = ()=>{
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-100 text-gray-700">
-                <tr class="hover:bg-gray-50 transition">
-                  <td class="py-3 px-4">1</td>
-                  <td class="py-3 px-4">Kain Katun Premium</td>
-                  <td class="py-3 px-4">Tekstil</td>
-                  <td class="py-3 px-4">Rp 75.000</td>
-                  <td class="py-3 px-4">120</td>
-                  <td class="py-3 px-4 text-center space-x-2">
-                    <button class="bg-sky-500 text-white px-3 py-1 rounded-lg hover:bg-sky-600">Edit</button>
-                    <button class="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-sky-600">Detail</button>
-                    <button class="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600">Hapus</button>
-                  </td>
-                </tr>
-                <tr class="hover:bg-gray-50 transition">
-                  <td class="py-3 px-4">2</td>
-                  <td class="py-3 px-4">Benang Polyester</td>
-                  <td class="py-3 px-4">Bahan Dasar</td>
-                  <td class="py-3 px-4">Rp 35.000</td>
-                  <td class="py-3 px-4">250</td>
-                  <td class="py-3 px-4 text-center space-x-2">
-                    <button class="bg-sky-500 text-white px-3 py-1 rounded-lg hover:bg-sky-600">Edit</button>
-                    <button class="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-sky-600">Detail</button>
-                    <button class="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600">Hapus</button>
-                  </td>
-                </tr>
-                <tr class="hover:bg-gray-50 transition">
-                  <td class="py-3 px-4">3</td>
-                  <td class="py-3 px-4">Serat Rayon</td>
-                  <td class="py-3 px-4">Tekstil</td>
-                  <td class="py-3 px-4">Rp 55.000</td>
-                  <td class="py-3 px-4">90</td>
-                  <td class="py-3 px-4 text-center space-x-2">
-                    <button class="bg-sky-500 text-white px-3 py-1 rounded-lg hover:bg-sky-600">Edit</button>
-                    <button class="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-sky-600">Detail</button>
-                    <button class="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600">Hapus</button>
-                  </td>
-                </tr>
+                ${component}
+              
               </tbody>
             </table>
           </div>
