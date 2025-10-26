@@ -3,6 +3,7 @@ import { guest } from "../middleware/gusetMiddleware.js"
 import { renderAbout } from "../src/pages/about.js"
 import renderAddProdukAdmin from "../src/pages/admin/add-produk.js"
 import { renderDashboardAdmin } from "../src/pages/admin/dashboard.js"
+import { renderDetailProdukAdmin } from "../src/pages/admin/detail-produk.js"
 import { renderProdukAdmin } from "../src/pages/admin/produk.js"
 import { renderLogin } from "../src/pages/auth/login.js"
 import { renderRegister } from "../src/pages/auth/register.js"
@@ -22,4 +23,5 @@ export const routes = [
     {path:"/dashboard",view:renderDashboardAdmin,middleware:auth},
     {path:"/produk",view:renderProdukAdmin,middleware:auth},
     {path:"/add-produk",view:renderAddProdukAdmin,middleware:auth},
+    {path:`/produk/show`,view:renderDetailProdukAdmin,middleware:auth},
 ]

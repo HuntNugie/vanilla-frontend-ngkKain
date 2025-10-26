@@ -154,5 +154,13 @@ export const klikPath = async (event) => {
             });
         });
 
+    }else if(event.target.classList.contains("detail-produk")){
+        try {
+            const id = event.target.dataset.id
+           
+            navigateTo(`/produk/show?id=${id}`)
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
