@@ -14,7 +14,8 @@ export default function renderEditProdukAdmin() {
         <h2 class="text-3xl font-bold text-sky-600 mb-4">Edit Produk </h2>
         <p class="text-gray-700 mb-10">Edit produk dari perusahaan</p>
 
-        <form class="form-addProduk bg-white p-8 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.25)] max-w-2xl">
+        <form class="form-editProduk bg-white p-8 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.25)] max-w-2xl">
+       <input type="hidden" name="idProduk" value="${produk._id}">
           <div class="mb-5">
             <label class="block text-gray-700 font-semibold mb-2" for="nama_produk">Nama Produk</label>
             <input type="text" id="nama_produk" name="nama_produk" placeholder="Masukkan nama produk" value="${produk.nama_produk}"
@@ -56,7 +57,7 @@ export default function renderEditProdukAdmin() {
             <button type="button"
               class="bg-gray-300 text-gray-700 px-5 py-2 rounded-lg hover:bg-gray-400 transition">Batal</button>
             <button type="submit"
-              class="add-produk bg-sky-600 text-white px-6 py-2 rounded-lg hover:bg-sky-700 transition">Simpan Produk</button>
+              class="submit-edit-produk bg-sky-600 text-white px-6 py-2 rounded-lg hover:bg-sky-700 transition">Simpan Produk</button>
           </div>
         </form>
       </main>

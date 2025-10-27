@@ -160,5 +160,36 @@ export const klikPath = async (event) => {
     }else if(event.target.classList.contains("edit-produk")){
         const id = event.target.dataset.id
         navigateTo(`/produk/edit?id=${id}`)
+    }else if(event.target.classList.contains("submit-edit-produk")){
+      try {
+        const form = sendForm(".form-editProduk")
+        const url = import.meta.env.VITE_API_UPDATE_PRODUK
+        const baseUrl = import.meta.env.VITE_API_URL
+        const kirim = await axios.put(`${baseUrl}${url}`,form,{withCredentials:true})
+        Swal.fire({
+                title: kirim.data.message,
+                icon: "success",
+                draggable: true
+        });
+        navigateTo("/produk")
+      } catch (error) {
+        document.querySelector(".form-editProduk").reset();
+            if (typeof error.response.data.message === "string") {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: error.message,
+                });
+            } else {
+                const err = error.response.data.message.map((e) => {
+                    return `<li>${e.msg}</li>`
+                }).join("")
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    html: `<ul>${err}</ul>`,
+                });
+            }
+      }
     }
 }
