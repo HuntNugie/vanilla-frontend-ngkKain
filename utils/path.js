@@ -153,14 +153,12 @@ export const klikPath = async (event) => {
                 text: err.data.message,
             });
         });
-
+        // untuk halaman detail produk
     }else if(event.target.classList.contains("detail-produk")){
-        try {
-            const id = event.target.dataset.id
-           
-            navigateTo(`/produk/show?id=${id}`)
-        } catch (error) {
-            console.log(error)
-        }
+       const id = event.target.dataset.id
+        navigateTo(`/produk/show?id=${id}`)
+    }else if(event.target.classList.contains("edit-produk")){
+        const id = event.target.dataset.id
+        navigateTo(`/produk/edit?id=${id}`)
     }
 }

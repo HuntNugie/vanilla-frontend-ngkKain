@@ -12,7 +12,7 @@ export const renderProdukAdmin = ()=>{
                   <td class="py-3 px-4">Rp ${el.harga}</td>
                   <td class="py-3 px-4">${el.stok}</td>
                   <td class="py-3 px-4 text-center space-x-2">
-                    <button class="bg-sky-500 text-white px-3 py-1 rounded-lg hover:bg-sky-600">Edit</button>
+                    <button class="edit-produk bg-sky-500 text-white px-3 py-1 rounded-lg hover:bg-sky-600" data-id="${el._id}">Edit</button>
                     <button class="detail-produk bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-sky-600" data-id="${el._id}">Detail</button>
                     <button class="delete-produk bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600" data-id="${el._id}">Hapus</button>
                   </td>
